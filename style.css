@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Image with Blur */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('back.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(1px);  /* Strong blur effect */
+    z-index: -1;
+}
+
+/* Dark Transparent Overlay */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(69, 69, 69, 0.307); /* Dark overlay */
+    backdrop-filter: blur(6px);
+    z-index: -1;
+}
+
+/* Profile Card */
+.profile-card {
+    background: rgba(174, 136, 202, 0.8); /* Light purple with transparency */
+    backdrop-filter: blur(10px);
+    width: 400px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+    border: 3px solid white; /* White border */
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3); /* White shadow */
+    position: relative;
+    z-index: 1;
+}
+
+/* Profile Image */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 3px solid white; /* White border */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.566); /* White glow effect */
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Name */
+.name {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+}
+
+/* Status */
+.status {
+    font-size: 16px;
+    color: white;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+/* Line Under Status */
+.status::after {
+    content: "";
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    height: 2px;
+    background-color: white;
+    margin: 10px auto;
+}
+
+/* Roles */
+.roles {
+    font-size: 14px;
+    color: white;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+/* Bio */
+.bio {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #a682d2;
+    margin: 0 8px;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+/* Hover Effects */
+.social-icons a:hover {
+    background: #a682d2;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Discord Presence */
+.discord-presence {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+/* Last.fm Now Playing (No Album Cover) */
+.lastfm-container {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
+
+/* Track Details */
+.track-title {
+    font-weight: bold;
+    color: white;
+}
+
+.track-artist {
+    color: #bbb;
+}
+
+.track-status {
+    font-size: 12px;
+    color: lightgreen;
+}
