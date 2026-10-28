@@ -588,3 +588,161 @@ body::after {
         transition-duration: 0.01ms !important;
     }
 }
+/* ===== Donate Effect (giống Discord) ===== */
+.custom-donate {
+    --d-main: #ff6b9d;
+    --d-second: #ffb84d;
+    --d-light: #ffd1e3;
+
+    position: relative;
+    isolation: isolate;
+    overflow: visible !important;
+    cursor: pointer;
+    font-weight: 600;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+        transform 0.3s cubic-bezier(.2, 1.8, .4, 1),
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Neon hover */
+.custom-donate:hover {
+    color: #fff;
+    background: var(--d-main);
+    transform: translateY(-5px) scale(1.12);
+    box-shadow:
+        0 0 10px var(--d-main),
+        0 0 25px #ff6b9d88,
+        0 0 45px #ffb84d55;
+}
+
+/* Icon $ */
+.custom-donate .donate-icon {
+    position: relative;
+    z-index: 2;
+    transition: filter 0.3s ease;
+}
+
+.custom-donate:hover .donate-icon {
+    filter: drop-shadow(0 0 5px white);
+}
+
+/* Tooltip */
+.custom-donate .copy-tooltip {
+    position: absolute;
+    z-index: 20;
+    left: 50%;
+    bottom: calc(100% + 15px);
+
+    padding: 8px 14px;
+    border: 1px solid #ffffff35;
+    border-radius: 12px;
+
+    color: white;
+    background: rgba(20, 20, 35, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    pointer-events: none;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 10px) scale(0.75);
+    transition:
+        opacity 0.25s ease,
+        transform 0.35s cubic-bezier(.2, 1.8, .4, 1),
+        visibility 0.25s ease;
+}
+
+.custom-donate.copied .copy-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0) scale(1);
+    box-shadow: 0 0 18px #ff6b9d55;
+}
+
+/* Khi click thành công */
+.custom-donate.copied {
+    color: white;
+    background: linear-gradient(135deg, var(--d-main), var(--d-second));
+    box-shadow:
+        0 0 12px var(--d-main),
+        0 0 28px #ff6b9d88,
+        0 0 50px #ffb84d55;
+    animation: donate-success 0.55s ease;
+}
+
+.custom-donate.copied .donate-icon {
+    animation: donate-icon-pop 0.55s ease;
+}
+
+@keyframes donate-success {
+    0%   { transform: scale(1); }
+    35%  { transform: scale(1.28) rotate(-8deg); }
+    65%  { transform: scale(0.94) rotate(4deg); }
+    100% { transform: scale(1); }
+}
+
+@keyframes donate-icon-pop {
+    0%   { transform: rotate(0) scale(1); }
+    45%  { transform: rotate(-15deg) scale(1.4); }
+    100% { transform: rotate(0) scale(1); }
+}
+
+/* Vòng tròn lan ra */
+.custom-donate .copy-ring {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    border: 2px solid var(--d-light);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: donate-ring 0.65s ease-out forwards;
+}
+
+@keyframes donate-ring {
+    from { opacity: 0.9; transform: scale(1); }
+    to   { opacity: 0;   transform: scale(2.4); }
+}
+
+/* Hạt sparkle */
+.custom-donate .copy-particle {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    color: var(--d-light);
+    font-size: 13px;
+    line-height: 1;
+    pointer-events: none;
+    animation: donate-particle 0.75s ease-out forwards;
+}
+
+@keyframes donate-particle {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3) rotate(0);
+    }
+    20% { opacity: 1; }
+    100% {
+        opacity: 0;
+        transform:
+            translate(calc(-50% + var(--dx)), calc(-50% + var(--dy)))
+            scale(0)
+            rotate(160deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .custom-donate,
+    .custom-donate * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
