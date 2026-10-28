@@ -295,3 +295,36 @@ discordIcon.addEventListener("click", async (event) => {
         }, 2000);
     }
 });
+const donateBtn = document.querySelector('.custom-donate');
+
+if (donateBtn) {
+    donateBtn.addEventListener('click', () => {
+        // Vòng tròn
+        const ring = document.createElement('span');
+        ring.className = 'copy-ring';
+        donateBtn.appendChild(ring);
+        setTimeout(() => ring.remove(), 700);
+
+        // Hạt sparkle
+        const symbols = ['✦', '✧', '❤', '✨'];
+        for (let i = 0; i < 10; i++) {
+            const p = document.createElement('span');
+            p.className = 'copy-particle';
+            p.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+            const angle = (Math.PI * 2 * i) / 10 + Math.random() * 0.5;
+            const dist = 35 + Math.random() * 25;
+            p.style.setProperty('--dx', `${Math.cos(angle) * dist}px`);
+            p.style.setProperty('--dy', `${Math.sin(angle) * dist}px`);
+
+            donateBtn.appendChild(p);
+            setTimeout(() => p.remove(), 800);
+        }
+
+        // Tooltip + trạng thái "copied"
+        donateBtn.classList.remove('copied');
+        void donateBtn.offsetWidth; // restart animation
+        donateBtn.classList.add('copied');
+        setTimeout(() => donateBtn.classList.remove('copied'), 1500);
+    });
+}
