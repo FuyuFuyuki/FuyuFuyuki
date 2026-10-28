@@ -581,7 +581,6 @@ body::after {
     }
 }
 
-/* Respect reduced-motion settings */
 @media (prefers-reduced-motion: reduce) {
     #fuyufuyuki,
     #fuyufuyuki * {
