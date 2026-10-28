@@ -588,3 +588,23 @@ body::after {
         transition-duration: 0.01ms !important;
     }
 }
+
+.social-icons a.custom-donate {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.social-icons a.custom-donate:hover {
+  transform: scale(1.12);
+}
