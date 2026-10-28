@@ -711,13 +711,12 @@ body::after {
     to   { opacity: 0;   transform: scale(2.4); }
 }
 
-/* Hạt sparkle */
 .custom-donate .copy-particle {
     position: absolute;
     z-index: 10;
     left: 50%;
     top: 50%;
-    color: var(--d-light);
+    color: green;
     font-size: 13px;
     line-height: 1;
     pointer-events: none;
