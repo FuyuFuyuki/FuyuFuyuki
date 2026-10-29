@@ -590,9 +590,9 @@ body::after {
 }
 /* ===== Donate Effect (giống Discord) ===== */
 .custom-donate {
-    --d-main: #ff6b9d;
-    --d-second: #ffb84d;
-    --d-light: #ffd1e3;
+    --d-main: #22c55e;
+    --d-second: #84cc16;
+    --d-light: #bbf7d0;
 
     position: relative;
     isolation: isolate;
@@ -614,8 +614,8 @@ body::after {
     transform: translateY(-5px) scale(1.12);
     box-shadow:
         0 0 10px var(--d-main),
-        0 0 25px #ff6b9d88,
-        0 0 45px #ffb84d55;
+        0 0 25px #22c55e88,
+        0 0 45px #84cc1655;
 }
 
 /* Icon $ */
@@ -673,8 +673,8 @@ body::after {
     background: linear-gradient(135deg, var(--d-main), var(--d-second));
     box-shadow:
         0 0 12px var(--d-main),
-        0 0 28px #ff6b9d88,
-        0 0 50px #ffb84d55;
+        0 0 28px #22c55e88,
+        0 0 50px #84cc1655;
     animation: donate-success 0.55s ease;
 }
 
